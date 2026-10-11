@@ -33,8 +33,8 @@ export default function Privacy() {
           analytics.
         </li>
         <li>
-          This website uses Google Analytics only if you allow it in the cookie
-          banner.
+          This website uses Google Analytics. Visitors in the EU, EEA and UK are
+          asked first; everyone can turn it off with Cookie settings.
         </li>
         <li>
           Your mail is shared with an AI agent only when you connect one, and
@@ -111,11 +111,26 @@ export default function Privacy() {
       <h2 id="this-website">This website</h2>
       <p>
         This section covers kaluta.org, not the app. The site uses Google
-        Analytics to count visits and see which pages are read, but only if you
-        choose &ldquo;Allow analytics&rdquo; in the cookie banner. Until you do,
-        the analytics script is not loaded and no analytics cookies are set.
+        Analytics to count visits and see which pages are read.
       </p>
       <ul>
+        <li>
+          If you visit from the EU, the EEA or the UK, the site asks first.
+          Google Analytics loads only if you choose &ldquo;Allow
+          analytics&rdquo; in the cookie banner; until then the script is not
+          loaded and no analytics cookies are set.
+        </li>
+        <li>
+          Elsewhere, Google Analytics loads when you open the site, and you can
+          turn it off at any time.
+        </li>
+        <li>
+          To tell which applies, the site uses the country our host, Vercel,
+          works out from your IP address. Only a yes or no (&ldquo;ask
+          first?&rdquo;) reaches your browser, which keeps it until you close
+          the tab; the site does not store your country or IP address. If the
+          country can&apos;t be determined, the site asks.
+        </li>
         <li>
           If you allow it, Google Analytics sets cookies (<code>_ga</code> and{" "}
           <code>_ga_*</code>) and sends Google details of your visit, such as

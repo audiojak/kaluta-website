@@ -5,6 +5,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 const GA_ID = "G-Q2C8E7ZQXH";
 const STORAGE_KEY = "kaluta-analytics-consent";
+const REGION_KEY = "kaluta-consent-required";
 const CHANGE_EVENT = "kaluta:consent-change";
 const OPEN_EVENT = "kaluta:open-cookie-settings";
 
@@ -17,6 +18,24 @@ function readConsent(): Consent | null {
   } catch {
     return null;
   }
+}
+
+// Asks /api/region once per browser session whether this visitor's country
+// needs opt-in consent. Any failure counts as yes.
+async function fetchConsentRequired(): Promise<boolean> {
+  try {
+    const cached = sessionStorage.getItem(REGION_KEY);
+    if (cached !== null) return cached === "true";
+  } catch {}
+  let required = true;
+  try {
+    const response = await fetch("/api/region");
+    if (response.ok) required = (await response.json()).consentRequired !== false;
+  } catch {}
+  try {
+    sessionStorage.setItem(REGION_KEY, String(required));
+  } catch {}
+  return required;
 }
 
 function subscribe(onChange: () => void) {
@@ -41,41 +60,50 @@ function clearAnalyticsCookies() {
   }
 }
 
-function saveConsent(consent: Consent) {
-  const previous = readConsent();
+function saveConsent(consent: Consent, analyticsLoaded: boolean) {
   try {
     localStorage.setItem(STORAGE_KEY, consent);
   } catch {
     // Storage is blocked: the choice lasts for this page view only.
   }
   window.dispatchEvent(new Event(CHANGE_EVENT));
-  if (previous === "granted" && consent === "denied") {
+  if (analyticsLoaded && consent === "denied") {
     // gtag.js is already running; drop its cookies and reload without it.
     clearAnalyticsCookies();
     location.reload();
   }
 }
 
-/** Loads Google Analytics only after the visitor opts in. */
+/**
+ * Loads Google Analytics. Visitors in the EU, EEA and UK must opt in first;
+ * elsewhere it loads by default and "Cookie settings" turns it off.
+ */
 export function CookieConsent() {
   // "unset" on the server and in the static HTML, so nothing loads before hydration.
-  const consent = useSyncExternalStore<Consent | null | "unset">(
+  const stored = useSyncExternalStore<Consent | null | "unset">(
     subscribe,
     readConsent,
     () => "unset",
   );
+  const [consentRequired, setConsentRequired] = useState<boolean>();
   const [reopened, setReopened] = useState(false);
 
   useEffect(() => {
+    fetchConsentRequired().then(setConsentRequired);
     const open = () => setReopened(true);
     window.addEventListener(OPEN_EVENT, open);
     return () => window.removeEventListener(OPEN_EVENT, open);
   }, []);
 
+  // Wait for both the stored choice and the region before deciding anything.
+  const consent =
+    stored === "unset" || consentRequired === undefined
+      ? "unset"
+      : (stored ?? (consentRequired ? null : "granted"));
   const showBanner = consent === null || (reopened && consent !== "unset");
   const choose = (choice: Consent) => {
     setReopened(false);
-    saveConsent(choice);
+    saveConsent(choice, consent === "granted");
   };
 
   return (
@@ -89,9 +117,10 @@ export function CookieConsent() {
         >
           <div className="mx-auto flex max-w-5xl flex-col gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-muted">
-              May we use Google Analytics cookies to count visits to this
-              website? It&apos;s off unless you say yes. The Kaluta app itself
-              collects no analytics.{" "}
+              {consentRequired
+                ? "May we use Google Analytics cookies to count visits to this website? It\u2019s off unless you say yes."
+                : "This website uses Google Analytics cookies to count visits. You can turn them off."}{" "}
+              The Kaluta app itself collects no analytics.{" "}
               <a href="/privacy#this-website" className="underline hover:text-foreground">
                 Details
               </a>
