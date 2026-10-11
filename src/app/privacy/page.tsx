@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { CookieSettingsButton } from "@/components/CookieConsent";
 import { GITHUB_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy policy",
-  description: "How Kaluta handles your Google account data and your email.",
+  description:
+    "How Kaluta handles your Google account data and your email, and how this website uses analytics.",
 };
 
-const LAST_UPDATED = "September 25, 2026";
+const LAST_UPDATED = "October 11, 2026";
 
 export default function Privacy() {
   return (
@@ -26,7 +28,14 @@ export default function Privacy() {
           Your email is stored only on your Mac. It never passes through servers
           operated by Kaluta or Actual AI — the project operates none.
         </li>
-        <li>Kaluta has no user accounts and collects no telemetry or analytics.</li>
+        <li>
+          The Kaluta app has no user accounts and collects no telemetry or
+          analytics.
+        </li>
+        <li>
+          This website uses Google Analytics only if you allow it in the cookie
+          banner.
+        </li>
         <li>
           Your mail is shared with an AI agent only when you connect one, and
           only through the tools you allow.
@@ -98,6 +107,37 @@ export default function Privacy() {
         used for advertising, and not used to train AI models by Kaluta or
         Actual AI.
       </p>
+
+      <h2 id="this-website">This website</h2>
+      <p>
+        This section covers kaluta.org, not the app. The site uses Google
+        Analytics to count visits and see which pages are read, but only if you
+        choose &ldquo;Allow analytics&rdquo; in the cookie banner. Until you do,
+        the analytics script is not loaded and no analytics cookies are set.
+      </p>
+      <ul>
+        <li>
+          If you allow it, Google Analytics sets cookies (<code>_ga</code> and{" "}
+          <code>_ga_*</code>) and sends Google details of your visit, such as
+          the pages you view, your browser and device type, and your
+          approximate location. Google handles that data under the{" "}
+          <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.
+        </li>
+        <li>
+          Your choice is saved in your browser&apos;s local storage, so the
+          banner doesn&apos;t ask again. It is not a cookie and is never sent
+          to a server.
+        </li>
+        <li>
+          You can change your choice at any time with{" "}
+          <CookieSettingsButton className="underline" /> in the footer. Turning
+          analytics off removes its cookies.
+        </li>
+        <li>
+          Nothing you do on this website is connected to your mail or to the
+          Kaluta app.
+        </li>
+      </ul>
 
       <h2>Who is responsible</h2>
       <p>

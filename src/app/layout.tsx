@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
+import { CookieConsent, CookieSettingsButton } from "@/components/CookieConsent";
 import { GITHUB_URL, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -105,9 +106,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <a href={GITHUB_URL} className="hover:text-foreground">
                 Source
               </a>
+              <CookieSettingsButton className="hover:text-foreground" />
             </div>
           </div>
         </footer>
+        <CookieConsent />
       </body>
     </html>
   );
