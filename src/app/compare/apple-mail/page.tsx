@@ -69,7 +69,7 @@ const c: Comparison = {
       feature: "AI writing help",
       openagc: {
         verdict: "yes",
-        text: "Writing help in the composer and agent drafts, following a writing guide learned from your sent mail",
+        text: "Writing help in the composer and agent drafts, following a writing guide learned from your sent mail; in workflows, up to three answers to pick or a draft from what you say",
       },
       other: { verdict: "yes", text: "Smart Reply and Writing Tools: proofread, rewrite, summarise" },
     },
@@ -96,6 +96,22 @@ const c: Comparison = {
         text: "Press t: Claude suggests the task, category and due day; a task list with the email behind each one",
       },
       other: { verdict: "partial", text: "Remind Me brings an email back later; no task list" },
+    },
+    {
+      feature: "Daily workflows",
+      openagc: {
+        verdict: "yes",
+        text: "Preview: Triage, Replies, Tasks and Waiting on others, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+      },
+      other: { verdict: "no", text: "None described in Mail's guide; Categories sort the inbox and suggested actions add a reminder or event" },
+    },
+    {
+      feature: "Follow-ups on unanswered mail",
+      openagc: {
+        verdict: "yes",
+        text: "Preview: Waiting on others finds sent mail that expects an answer, labels it Waiting, and after 3 days offers up to three follow-ups written ahead",
+      },
+      other: { verdict: "yes", text: "Follow Up Suggestions move a sent email with no response in 3 days back to the top of the inbox; you write the follow-up" },
     },
     {
       feature: "Learns how you write",
@@ -149,6 +165,7 @@ const c: Comparison = {
     { label: "Mail User Guide for Mac", url: "https://support.apple.com/guide/mail/welcome/mac" },
     { label: "Apple Intelligence (Apple)", url: "https://www.apple.com/apple-intelligence/" },
     { label: "Use Apple Intelligence in Mail on Mac (Mac User Guide)", url: "https://support.apple.com/guide/mac-help/mchlb2dbea8f/mac" },
+    { label: "Mail User Guide: Mark emails to revisit later", url: "https://support.apple.com/guide/mail/mark-emails-to-revisit-later-mlhlp1052/mac" },
     { label: "Kaluta specification", url: "https://github.com/audiojak/kaluta/blob/main/docs/SPECIFICATION.md" },
   ],
 };

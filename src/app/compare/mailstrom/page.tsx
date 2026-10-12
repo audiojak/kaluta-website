@@ -94,6 +94,22 @@ const c: Comparison = {
       other: { verdict: "partial", text: "Rules move future mail matching a sender or subject" },
     },
     {
+      feature: "Daily workflows",
+      openagc: {
+        verdict: "yes",
+        text: "Preview: Triage, Replies, Tasks and Waiting on others, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+      },
+      other: { verdict: "partial", text: "Bundles group related mail so you can act on many messages at once; no AI suggestions" },
+    },
+    {
+      feature: "Follow-ups on unanswered mail",
+      openagc: {
+        verdict: "yes",
+        text: "Preview: Waiting on others finds sent mail that expects an answer, labels it Waiting, and after 3 days offers up to three follow-ups written ahead",
+      },
+      other: { verdict: "no", text: "None described; Chill brings mail back on a date you pick, whether or not anyone replied (subscribers)" },
+    },
+    {
       feature: "Progress tracking",
       openagc: { verdict: "yes", text: "Inbox Zero card: percentage, today's numbers, a month's trend" },
       other: { verdict: "yes", text: "Inbox Zero stats, daily or weekly email reports" },

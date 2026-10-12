@@ -85,7 +85,7 @@ const c: Comparison = {
       feature: "AI drafts and replies",
       openagc: {
         verdict: "yes",
-        text: "Writing help in the composer and agent drafts, following a writing guide learned from your own sent mail",
+        text: "Writing help in the composer and agent drafts, following a writing guide learned from your own sent mail; in workflows, up to three answers to pick or a draft from what you say",
       },
       other: { verdict: "yes", text: "Instant Reply, auto drafts in your voice, Write with AI (Business for auto drafts)" },
     },
@@ -109,6 +109,22 @@ const c: Comparison = {
         text: "Press t: Claude suggests the task, category and due day; a task list with the email behind each one",
       },
       other: { verdict: "partial", text: "Follow-up reminders and snoozing; no task list" },
+    },
+    {
+      feature: "Daily workflows",
+      openagc: {
+        verdict: "yes",
+        text: "Preview: Triage, Replies, Tasks and Waiting on others, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+      },
+      other: { verdict: "partial", text: "Split Inbox, auto labels and Get Me To Zero for working through the inbox; its help centre describes no one-at-a-time mode" },
+    },
+    {
+      feature: "Follow-ups on unanswered mail",
+      openagc: {
+        verdict: "yes",
+        text: "Preview: Waiting on others finds sent mail that expects an answer, labels it Waiting, and after 3 days offers up to three follow-ups written ahead",
+      },
+      other: { verdict: "yes", text: "Remind Me and Auto Reminders bring back mail with no reply; Auto Drafts writes the follow-up (Business)" },
     },
     {
       feature: "Learns how you write",
@@ -167,6 +183,8 @@ const c: Comparison = {
     { label: "Superhuman Mail MCP Server (help centre)", url: "https://help.superhuman.com/hc/en-us/articles/49810745762067" },
     { label: "Superhuman AI overview (data handling)", url: "https://help.superhuman.com/hc/en-us/articles/38456908110227" },
     { label: "Download Superhuman Mail (platforms)", url: "https://help.superhuman.com/hc/en-us/articles/38456031956243" },
+    { label: "Superhuman: Auto Reminders & Auto Drafts", url: "https://help.superhuman.com/hc/en-us/articles/46005658551053-Auto-Reminders-Auto-Drafts" },
+    { label: "Superhuman: Remind Me", url: "https://help.superhuman.com/hc/en-us/articles/46005666142733-Remind-Me" },
     { label: "Kaluta specification", url: "https://github.com/audiojak/kaluta/blob/main/docs/SPECIFICATION.md" },
   ],
 };

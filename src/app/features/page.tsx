@@ -6,7 +6,7 @@ import FeatureAnimation from "@/components/FeatureAnimation";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Turn email into tasks, let Claude Code or Codex action them in a writing style learned from your own mail, and sort mail with routines.",
+    "Work through each day's mail one thing at a time, turn email into tasks, let Claude Code or Codex action them in a writing style learned from your own mail, and sort mail with routines.",
 };
 
 const buckets = [
@@ -41,6 +41,113 @@ function Shot({
         className="w-full"
       />
     </div>
+  );
+}
+
+const workflows = [
+  {
+    name: "Triage",
+    dot: "bg-indigo-500",
+    src: "/img/workflow-triage.jpg",
+    alt: "Triage, 1 of 9: Sam Rivera's email asking whether Thursday at 2 works for board prep, under Kaluta's suggestion, Quick reply · about 20 seconds, the reason Sam asks something quick, and the conversation's task. Buttons: Reply (Return), Make a task (T), Archive (E), Leave in Inbox (L), Skip for now (S)",
+    text: "Every new conversation, people first, with Kaluta's suggestion and its reason: a quick reply when the answer takes 30 seconds or less, with up to three answers ready to pick; a task when it takes longer, filled in on the same screen; archive; or leave it in the Inbox. Return takes the suggestion, and the other choices are always one key away.",
+  },
+  {
+    name: "Replies",
+    dot: "bg-teal-600",
+    src: "/img/workflow-replies.jpg",
+    alt: "Replies, 1 of 6: Avery Kim asks whether launch goes ahead on Tuesday or moves to Thursday, with the question highlighted, then What do you want to say? with the starters Go for Tuesday and Push to Thursday, and a Write it button",
+    text: "Conversations that ask you something and have no task. Kaluta highlights the questions and asks what you want to say, with starters drawn from them; it writes nothing until you have said something. Sending archives the conversation, and ⌘Z puts it back.",
+  },
+  {
+    name: "Tasks",
+    dot: "bg-orange-600",
+    src: "/img/workflow-tasks.jpg",
+    alt: "Tasks, 1 of 3: Update the card on Example Cloud, Admin, carried over from yesterday, with the reason and the billing email below; a rail lists the day's three tasks and a pill says 2 more later this week. Buttons: Done (E), Tomorrow (L), Skip for now (S)",
+    text: "Today's tasks one at a time, carried-over ones first, with the email below and the day's set in a rail. A task that ends in a reply asks what you decided, then Send and finish the task completes it and archives the email. Tomorrow moves one on without penalty; one finished elsewhere shows as done.",
+  },
+  {
+    name: "Waiting on others",
+    dot: "bg-purple-600",
+    src: "/img/workflow-waiting.jpg",
+    alt: "Waiting on others, 1 of 14: Waiting on Casey Tanaka · 13 days, because the email asks them something, above what you wrote; a rail lists who owes an answer and for how long. Buttons: Nudge (Return), Let it go (E), Check again (L), Skip for now (S)",
+    text: "Once a day Kaluta reads the mail you sent and works out which expects an answer, labelling it Waiting so Gmail sees it too. After three days with no reply (a setting) it joins the list, longest first. Nudge picks from up to three follow-ups written ahead, Let it go takes the label off, and Check again hides it for a day, three days or a week.",
+  },
+];
+
+function Workflows() {
+  return (
+    <section className="mx-auto max-w-5xl px-5 pb-24">
+      <div className="mx-auto max-w-3xl text-center">
+        <div className="inline-block rounded-full bg-accent-soft px-3 py-1 text-sm font-medium text-accent">
+          New · preview
+        </div>
+        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
+          Your day&apos;s mail, one thing at a time
+        </h2>
+        <p className="mt-4 text-muted text-balance">
+          Kaluta opens on <strong className="text-foreground">What&apos;s Next</strong>:
+          how long today&apos;s mail will take, and the job to start with. Each
+          workflow is one daily job, shown one item at a time from a set fixed
+          when you start, with a key on every button and Undo instead of
+          confirmation dialogs. Leave with Esc and come back to the same place;
+          mail that arrives meanwhile waits for the end.
+        </p>
+      </div>
+      <div className="mt-10">
+        <Shot
+          src="/img/workflows-start.jpg"
+          alt="What's Next: Monday, October 12; About 30 minutes of mail today. A large card, Triage what's new, 9 new conversations, starts on Return; smaller cards for Replies (6 waiting on your answer), Tasks (3 for today, 2 later this week), Waiting on others (14 with no answer), Weekly reading, Agents and Teach Kaluta"
+          width={1200}
+          height={760}
+        />
+      </div>
+      <div className="mt-12 grid gap-x-10 gap-y-14 md:grid-cols-2">
+        {workflows.map((w) => (
+          <div key={w.name}>
+            <Shot src={w.src} alt={w.alt} width={1200} height={760} />
+            <h3 className="mt-5 flex items-center gap-2.5 text-xl font-semibold tracking-tight">
+              <span className={`size-2.5 rounded-full ${w.dot}`} />
+              {w.name}
+            </h3>
+            <p className="mt-2 text-muted">{w.text}</p>
+          </div>
+        ))}
+      </div>
+      <div className="mt-16 grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <h3 className="text-xl font-semibold tracking-tight">
+            Kaluta writes after you
+          </h3>
+          <p className="mt-3 text-muted">
+            In a workflow, Kaluta drafts only once you have said what you want,
+            typed or dictated, or, where the answer is short and predictable,
+            offers up to three to pick from. Every email it writes ends on an
+            editable screen: what you said above it, Shorter, Warmer or a
+            change in your own words, then Send.
+          </p>
+          <p className="mt-3 text-muted">
+            The suggestions, answers and nudges come from your own agent,
+            Claude Code or Codex, working read-only in the background. Ending a
+            set closes a ring and plays a short chord. There are no streaks or
+            red counts, and work from an earlier day is carried over, never
+            overdue.
+          </p>
+        </div>
+        <Shot
+          src="/img/workflow-replies-write.jpg"
+          alt="Replies: under Avery's email, You said: Go for Tuesday. I'll have the pricing copy to you by Monday noon, with Change; the reply Kaluta wrote from it, editable; Shorter, Warmer and Tell Kaluta what to change; and Send (⌘Return)"
+          width={1200}
+          height={760}
+        />
+      </div>
+      <p className="mt-12 text-center text-sm text-muted text-balance">
+        Workflows are a preview: turn on{" "}
+        <span className="text-foreground">Open on the start screen</span> in
+        Settings › General. Weekly reading, Agents and Teach Kaluta have
+        places on the start screen and are still being built.
+      </p>
+    </section>
   );
 }
 
@@ -89,8 +196,9 @@ export default function Features() {
           From inbox to done, with an agent at your side
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-lg text-muted text-balance">
-          Kaluta turns email into tasks, lets your own AI agent work through
-          them in your own voice, keeps automated mail out of your way, gives
+          Kaluta walks you through each day&apos;s mail one thing at a time,
+          turns email into tasks, lets your own AI agent work through them in
+          your own voice, keeps automated mail out of your way, gives
           an agent an address of its own, and clears years of mail in one go.
         </p>
       </section>
@@ -98,6 +206,8 @@ export default function Features() {
       <section className="mx-auto max-w-5xl px-5 pb-24">
         <FeatureAnimation />
       </section>
+
+      <Workflows />
 
       <section className="mx-auto max-w-5xl space-y-24 px-5 pb-24">
         <div className="grid items-center gap-10 md:grid-cols-2">
@@ -141,9 +251,11 @@ export default function Features() {
               that would leave your Mac.
             </p>
             <p className="mt-3 text-muted">
-              You review the proposal and approve or reject it. Reply from a
-              task yourself and Kaluta offers to mark it done once it&apos;s
-              sent.
+              You review the proposal and approve or reject it. Reply to a
+              conversation with an open task yourself, from anywhere, and the
+              composer names the task and offers{" "}
+              <span className="text-foreground">Send and Finish Task</span> or{" "}
+              <span className="text-foreground">Send, Keep Task Open</span>.
             </p>
           </div>
           <div className="md:order-1">
@@ -202,8 +314,8 @@ export default function Features() {
           </div>
           <div className="space-y-4 md:order-1">
             <Shot
-              src="/img/writing-help.png"
-              alt="The composer with a reply to Emerson Silva, showing the original message above the editor and a bar that reads: Ask Claude to write or change this message"
+              src="/img/composer-task.jpg"
+              alt="The composer replying to Sam Rivera about board prep: a line saying it answers the task Pick a time for board prep, with Send, Keep Task Open and Send and Finish Task buttons; Sam's message above the reply; and a bar that reads: Ask Claude to write or change this message"
               width={760}
               height={760}
             />
@@ -232,7 +344,9 @@ export default function Features() {
               needs to show up in two or three messages before it&apos;s
               proposed. The Writing Guide&apos;s header says how many rules
               are waiting; you review them as cards, accept, edit or reject
-              each one, and every decision can be undone.
+              each one, and every decision can be undone. What you tell Kaluta
+              when it writes for you counts as evidence too, and a proposal can
+              quote your words.
             </p>
             <p className="mt-3 text-muted">
               A <strong className="text-foreground">Facts</strong> page keeps

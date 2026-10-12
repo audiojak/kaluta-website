@@ -67,7 +67,7 @@ const c: Comparison = {
       feature: "AI writing help",
       openagc: {
         verdict: "yes",
-        text: "Writing help in the composer and agent drafts, following a writing guide learned from your sent mail",
+        text: "Writing help in the composer and agent drafts, following a writing guide learned from your sent mail; in workflows, up to three answers to pick or a draft from what you say",
       },
       other: { verdict: "yes", text: "Help me write and Suggested Replies, free; Proofread with AI Pro" },
     },
@@ -99,6 +99,22 @@ const c: Comparison = {
         text: "Press t: Claude suggests the task, category and due day; a task list on your Mac, with a Task label in Gmail so it shows on your phone",
       },
       other: { verdict: "partial", text: "Add to Google Tasks by hand; snooze and nudges" },
+    },
+    {
+      feature: "Daily workflows",
+      openagc: {
+        verdict: "yes",
+        text: "Preview: Triage, Replies, Tasks and Waiting on others, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+      },
+      other: { verdict: "partial", text: "AI Inbox (beta; US, English, with Google AI Plus, Pro or Ultra or Workspace Enterprise Plus) lists suggested to-dos with Reply or View; category tabs" },
+    },
+    {
+      feature: "Follow-ups on unanswered mail",
+      openagc: {
+        verdict: "yes",
+        text: "Preview: Waiting on others finds sent mail that expects an answer, labels it Waiting, and after 3 days offers up to three follow-ups written ahead",
+      },
+      other: { verdict: "yes", text: "Nudges show sent mail that may need a follow-up at the top of the inbox; you write the follow-up" },
     },
     {
       feature: "Learns how you write",
@@ -160,6 +176,8 @@ const c: Comparison = {
     { label: "Gemini in Gmail (Google support)", url: "https://support.google.com/mail/answer/14199860" },
     { label: "Google AI plans and pricing", url: "https://one.google.com/about/google-ai-plans/" },
     { label: "How to use Gemini in Gmail (Google blog)", url: "https://blog.google/products/gmail/how-to-use-gemini-gmail-app/" },
+    { label: "Gmail Help: AI Inbox", url: "https://support.google.com/mail/answer/16845247" },
+    { label: "Gmail Help: Reply to messages (nudges)", url: "https://support.google.com/mail/answer/6585" },
     { label: "Kaluta specification (Gmail integration, §7)", url: "https://github.com/audiojak/kaluta/blob/main/docs/SPECIFICATION.md" },
   ],
 };
