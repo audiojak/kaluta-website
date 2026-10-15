@@ -98,7 +98,7 @@ const c: Comparison = {
       feature: "Sorting and labels",
       openagc: {
         verdict: "yes",
-        text: "Routines: scheduled sorting into daily, weekly and monthly labels, locally or as a Claude cloud routine; Gmail's categories",
+        text: "Routines: scheduled sorting into daily, weekly and monthly labels, locally or as a Claude cloud routine; Weekly reading brings each label back on the day it's due (preview); Gmail's categories",
       },
       other: { verdict: "yes", text: "Split Inbox and custom auto labels (Business)" },
     },
@@ -114,7 +114,7 @@ const c: Comparison = {
       feature: "Daily workflows",
       openagc: {
         verdict: "yes",
-        text: "Preview: Triage, Replies, Tasks and Waiting on others, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
       },
       other: { verdict: "partial", text: "Split Inbox, auto labels and Get Me To Zero for working through the inbox; its help centre describes no one-at-a-time mode" },
     },

@@ -49,20 +49,23 @@ const workflows = [
     name: "Triage",
     dot: "bg-indigo-500",
     src: "/img/workflow-triage.jpg",
-    alt: "Triage, 1 of 9: Sam Rivera's email asking whether Thursday at 2 works for board prep, under Kaluta's suggestion, Quick reply · about 20 seconds, the reason Sam asks something quick, and the conversation's task. Buttons: Reply (Return), Make a task (T), Archive (E), Leave in Inbox (L), Skip for now (S)",
-    text: "Every new conversation, people first, with Kaluta's suggestion and its reason: a quick reply when the answer takes 30 seconds or less, with up to three answers ready to pick; a task when it takes longer, filled in on the same screen; archive; or leave it in the Inbox. Return takes the suggestion, and the other choices are always one key away.",
+    height: 760,
+    alt: "Triage, 1 of 9: Sam Rivera's email asking whether Thursday at 2 works for board prep, as it was sent, with Open the email (O) and Open in Gmail (G); above it Kaluta's suggestion, Quick reply · about 20 seconds, its reason, and the conversation's task. Buttons: Reply (Return), Make a task (T), Archive (E), Leave in Inbox (L), Skip for now (S)",
+    text: "Every new conversation, people first, with Kaluta's suggestion and its reason: a quick reply when the answer takes 30 seconds or less, with up to three answers ready to pick; a task when it takes longer, filled in on the same screen; archive; or leave it in the Inbox. The suggestion is marked on its own button and the keys never move, so Return is always Reply. A long newsletter or report shows Kaluta's short summary instead, and if you already wrote to the sender in another thread, Triage says so.",
   },
   {
     name: "Replies",
     dot: "bg-teal-600",
     src: "/img/workflow-replies.jpg",
-    alt: "Replies, 1 of 6: Avery Kim asks whether launch goes ahead on Tuesday or moves to Thursday, with the question highlighted, then What do you want to say? with the starters Go for Tuesday and Push to Thursday, and a Write it button",
-    text: "Conversations that ask you something and have no task. Kaluta highlights the questions and asks what you want to say, with starters drawn from them; it writes nothing until you have said something. Sending archives the conversation, and ⌘Z puts it back.",
+    height: 733,
+    alt: "Replies, 1 of 6: Avery Kim asks whether launch goes ahead on Tuesday or moves to Thursday, then What do you want to say? Kaluta writes the email from it, for you to read and change before it goes; starters Go for Tuesday and Push to Thursday; buttons Write it with Kaluta, Use my words and Cancel",
+    text: "Conversations that ask you something and have no task. Kaluta asks what you want to say, with starters drawn from the email's questions, and writes nothing until you have said something; Use my words makes what you typed the email, with no draft. Sending archives the conversation, Archive (E) is there when no reply is needed, and ⌘Z puts it back.",
   },
   {
     name: "Tasks",
     dot: "bg-orange-600",
     src: "/img/workflow-tasks.jpg",
+    height: 733,
     alt: "Tasks, 1 of 3: Update the card on Example Cloud, Admin, carried over from yesterday, with the reason and the billing email below; a rail lists the day's three tasks and a pill says 2 more later this week. Buttons: Done (E), Tomorrow (L), Skip for now (S)",
     text: "Today's tasks one at a time, carried-over ones first, with the email below and the day's set in a rail. A task that ends in a reply asks what you decided, then Send and finish the task completes it and archives the email. Tomorrow moves one on without penalty; one finished elsewhere shows as done.",
   },
@@ -70,8 +73,33 @@ const workflows = [
     name: "Waiting on others",
     dot: "bg-purple-600",
     src: "/img/workflow-waiting.jpg",
+    height: 733,
     alt: "Waiting on others, 1 of 14: Waiting on Casey Tanaka · 13 days, because the email asks them something, above what you wrote; a rail lists who owes an answer and for how long. Buttons: Nudge (Return), Let it go (E), Check again (L), Skip for now (S)",
     text: "Once a day Kaluta reads the mail you sent and works out which expects an answer, labelling it Waiting so Gmail sees it too. After three days with no reply (a setting) it joins the list, longest first. Nudge picks from up to three follow-ups written ahead, Let it go takes the label off, and Check again hides it for a day, three days or a week.",
+  },
+  {
+    name: "Weekly reading",
+    dot: "bg-amber-700",
+    src: "/img/workflow-reading.jpg",
+    height: 733,
+    alt: "Weekly reading, 1 of 3, in the Needs action soon label: Degraded performance in us-east from Status Alerts, shown as Kaluta's one-line summary; a rail lists the label's three unread emails. Buttons: Read, next (E), Open in full (O), Keep for later (L), Back to the Inbox (I), Clear the bucket (⌘E)",
+    text: "What your sorting routine filed, on the day each label is due: daily ones every day, weekly ones on Friday or a day you choose, monthly ones on the 1st. A short report comes first, then each label one email at a time as Kaluta's summary, written when the routine sorted it. Reading and clearing mark mail read and keep the label; sending one back to the Inbox has Kaluta propose a change to the routine.",
+  },
+  {
+    name: "Agents",
+    dot: "bg-slate-600",
+    src: "/img/workflow-agents.jpg",
+    height: 733,
+    alt: "Agents, 1 of 2: a verification code from Example Journals to an agent mailbox, research-scout@demo.primitive.email, shown large as 482 913 with when it expires. Buttons: Copy the code (C), Done (E), Skip for now (S)",
+    text: "Everything your agents are waiting on you for, across accounts: a send an agent proposed, opened on the email itself to edit and send or not; a verification code that arrived in an agent mailbox, shown large with Copy the code; and this morning's sorting run, to keep or undo. A pill says what agent mailboxes sent on their own.",
+  },
+  {
+    name: "Teach Kaluta",
+    dot: "bg-green-700",
+    src: "/img/workflow-teach.jpg",
+    height: 733,
+    alt: "Teach Kaluta, 1 of 7: a proposed rule, Never write 'circle back', from learning your sent mail, with how it is checked and The messages that show it (O); a rail lists the rest, rules, a guideline, a change and facts. Buttons: Accept (E), Edit… (W), Reject, Show the evidence (O), Skip for now (S)",
+    text: "What Kaluta has learned and wants you to approve, one proposal at a time: writing-guide rules, facts about you, and changes to the sorting routine. Each shows the change it makes, with its evidence on O. Accept, edit or reject each one; there is no Accept All, and ⌘Z undoes a decision and its change together.",
   },
 ];
 
@@ -87,17 +115,18 @@ function Workflows() {
         </h2>
         <p className="mt-4 text-muted text-balance">
           Kaluta opens on <strong className="text-foreground">What&apos;s Next</strong>:
-          how long today&apos;s mail will take, and the job to start with. Each
-          workflow is one daily job, shown one item at a time from a set fixed
-          when you start, with a key on every button and Undo instead of
-          confirmation dialogs. Leave with Esc and come back to the same place;
-          mail that arrives meanwhile waits for the end.
+          how long today&apos;s mail will take, the job to start with, the
+          people you know who wrote, and what is worth a look first. Seven
+          workflows each take one daily job, one item at a time from a set
+          fixed when you start, with a key on every button and Undo instead of
+          confirmation dialogs. Esc goes back to your mail and comes back to
+          the same place; mail that arrives meanwhile waits for the end.
         </p>
       </div>
       <div className="mt-10">
         <Shot
           src="/img/workflows-start.jpg"
-          alt="What's Next: Monday, October 12; About 30 minutes of mail today. A large card, Triage what's new, 9 new conversations, starts on Return; smaller cards for Replies (6 waiting on your answer), Tasks (3 for today, 2 later this week), Waiting on others (14 with no answer), Weekly reading, Agents and Teach Kaluta"
+          alt="What's Next: Thursday, October 15; About 32 minutes of mail today. A large card, Triage what's new, 9 new conversations, from Taylor Chen, Avery Kim, Drew Haddad, Sam Rivera and 2 others you know, with three worth a look and why (answers you, asks you something, to you alone), starts on Return; smaller cards for Replies (6 waiting on your answer), Tasks (3 for today, 2 later this week), Waiting on others (14 with no answer), Weekly reading (3 due today), Agents (2 waiting on you) and Teach Kaluta (7 to decide)"
           width={1200}
           height={760}
         />
@@ -105,7 +134,7 @@ function Workflows() {
       <div className="mt-12 grid gap-x-10 gap-y-14 md:grid-cols-2">
         {workflows.map((w) => (
           <div key={w.name}>
-            <Shot src={w.src} alt={w.alt} width={1200} height={760} />
+            <Shot src={w.src} alt={w.alt} width={1200} height={w.height} />
             <h3 className="mt-5 flex items-center gap-2.5 text-xl font-semibold tracking-tight">
               <span className={`size-2.5 rounded-full ${w.dot}`} />
               {w.name}
@@ -113,40 +142,52 @@ function Workflows() {
             <p className="mt-2 text-muted">{w.text}</p>
           </div>
         ))}
-      </div>
-      <div className="mt-16 grid items-center gap-10 md:grid-cols-2">
-        <div>
+        <div className="self-center">
           <h3 className="text-xl font-semibold tracking-tight">
             Kaluta writes after you
           </h3>
-          <p className="mt-3 text-muted">
-            In a workflow, Kaluta drafts only once you have said what you want,
-            typed or dictated, or, where the answer is short and predictable,
-            offers up to three to pick from. Every email it writes ends on an
-            editable screen: what you said above it, Shorter, Warmer or a
-            change in your own words, then Send.
+          <p className="mt-2 text-muted">
+            Kaluta drafts only once you have said what you want, typed or
+            dictated, or, where the answer is short and predictable, offers up
+            to three to pick from. Every email it writes ends on an editable
+            screen: who it goes to, what you said above it, Shorter, Warmer or a
+            change in your own words, then Send. Reply all is A when others are
+            on the email.
+          </p>
+        </div>
+      </div>
+      <div className="mt-16 grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <p className="text-muted">
+            The suggestions, summaries, answers and nudges come from your own
+            agent, Claude Code or Codex, working read-only in the background.
+            Emails show as they were sent, and open in their own window (O) or
+            in Gmail (G). Ending a set closes a ring and plays a short
+            chord. There are no streaks or red counts, and work from an earlier
+            day is carried over, never overdue.
           </p>
           <p className="mt-3 text-muted">
-            The suggestions, answers and nudges come from your own agent,
-            Claude Code or Codex, working read-only in the background. Ending a
-            set closes a ring and plays a short chord. There are no streaks or
-            red counts, and work from an earlier day is carried over, never
-            overdue.
+            Workflows are a preview. Once Kaluta finds Claude Code or Codex on
+            your Mac, the Inbox offers to turn them on; you can also turn on{" "}
+            <span className="text-foreground">Open on the start screen</span> in
+            Settings › General.
           </p>
+          <div className="mt-5 w-fit overflow-hidden rounded-lg border border-border bg-white shadow-lg shadow-black/10">
+            <Image
+              src="/img/workflows-tip.png"
+              alt="The Inbox's tip: Daily Workflows. Kaluta can turn your mail into short daily workflows: triage, replies, tasks, follow-ups and reading. It uses your agent in the background. Buttons: Turn On, Not Now"
+              width={460}
+              height={157}
+            />
+          </div>
         </div>
         <Shot
           src="/img/workflow-replies-write.jpg"
-          alt="Replies: under Avery's email, You said: Go for Tuesday. I'll have the pricing copy to you by Monday noon, with Change; the reply Kaluta wrote from it, editable; Shorter, Warmer and Tell Kaluta what to change; and Send (⌘Return)"
+          alt="Replies: under Avery's email, To: Avery Kim, You said: Go for Tuesday. I'll have the pricing copy to you by Monday noon, with Change; the reply Kaluta wrote from it, editable; Shorter, Warmer and Tell Kaluta what to change; and Send (⌘Return), Change what I said (Esc), Discard (⌘.)"
           width={1200}
-          height={760}
+          height={733}
         />
       </div>
-      <p className="mt-12 text-center text-sm text-muted text-balance">
-        Workflows are a preview: turn on{" "}
-        <span className="text-foreground">Open on the start screen</span> in
-        Settings › General. Weekly reading, Agents and Teach Kaluta have
-        places on the start screen and are still being built.
-      </p>
     </section>
   );
 }
@@ -251,7 +292,10 @@ export default function Features() {
               that would leave your Mac.
             </p>
             <p className="mt-3 text-muted">
-              You review the proposal and approve or reject it. Reply to a
+              Nothing it writes goes out unseen: a send it proposes opens with{" "}
+              <span className="text-foreground">Review and Send</span> on the
+              email itself, in the composer, for you to change before it goes,
+              or you reject it. Reply to a
               conversation with an open task yourself, from anywhere, and the
               composer names the task and offers{" "}
               <span className="text-foreground">Send and Finish Task</span> or{" "}
@@ -259,12 +303,14 @@ export default function Features() {
             </p>
           </div>
           <div className="md:order-1">
-            <Shot
-              src="/img/agent-task.png"
-              alt="Claude, asked to draft the reply Emerson is waiting for, proposes sending Re: Onboarding plan, with Review, Reject and Approve buttons"
-              width={1200}
-              height={769}
-            />
+            <div className="mx-auto w-fit overflow-hidden rounded-lg border border-border bg-white shadow-lg shadow-black/10">
+              <Image
+                src="/img/agent-proposal.png"
+                alt="Claude, asked to draft the reply Emerson is waiting for, proposes sending Re: Onboarding plan to emerson@example.org, with Reject and Review and Send buttons"
+                width={460}
+                height={270}
+              />
+            </div>
           </div>
         </div>
 
@@ -284,6 +330,12 @@ export default function Features() {
               it locally with your own agent, or publish it as a Claude Code
               cloud routine through your own Claude login so it keeps going
               when your Mac is asleep.
+            </p>
+            <p className="mt-3 text-muted">
+              The Weekly reading workflow then brings each label back on the
+              day it is due, one email at a time as Kaluta&apos;s summary.
+              Send one back to the Inbox and Kaluta proposes leaving that
+              sender alone next time, for you to accept.
             </p>
           </div>
           <RoutineIllustration />
@@ -343,8 +395,9 @@ export default function Features() {
               versions side by side and the differing words marked. A pattern
               needs to show up in two or three messages before it&apos;s
               proposed. The Writing Guide&apos;s header says how many rules
-              are waiting; you review them as cards, accept, edit or reject
-              each one, and every decision can be undone. What you tell Kaluta
+              are waiting, and the Teach Kaluta workflow takes you through them
+              one at a time with their evidence: accept, edit or reject each
+              one, and every decision can be undone. What you tell Kaluta
               when it writes for you counts as evidence too, and a proposal can
               quote your words.
             </p>
@@ -392,7 +445,8 @@ export default function Features() {
               agent. Per mailbox you choose whether agents send freely (each
               message is checked against the mailbox&apos;s guide and logged)
               or ask before each send, as on your own accounts. Deleting mail
-              always asks. Two services are supported, both free to start:{" "}
+              always asks. Verification codes that arrive in an agent mailbox
+              show up large in the Agents workflow, ready to copy. Two services are supported, both free to start:{" "}
               <a href="https://primitive.dev" className="underline hover:text-foreground">
                 Primitive
               </a>{" "}

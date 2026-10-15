@@ -89,7 +89,7 @@ const c: Comparison = {
       feature: "Scheduled sorting of automated mail",
       openagc: {
         verdict: "yes",
-        text: "Routines: an agent sorts alerts, newsletters and receipts into daily, weekly and monthly labels, locally or in Claude's cloud",
+        text: "Routines: an agent sorts alerts, newsletters and receipts into daily, weekly and monthly labels, locally or in Claude's cloud; Weekly reading brings each label back on the day it's due (preview)",
       },
       other: { verdict: "partial", text: "Rules move future mail matching a sender or subject" },
     },
@@ -97,7 +97,7 @@ const c: Comparison = {
       feature: "Daily workflows",
       openagc: {
         verdict: "yes",
-        text: "Preview: Triage, Replies, Tasks and Waiting on others, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
       },
       other: { verdict: "partial", text: "Bundles group related mail so you can act on many messages at once; no AI suggestions" },
     },

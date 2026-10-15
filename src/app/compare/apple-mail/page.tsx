@@ -85,7 +85,7 @@ const c: Comparison = {
       feature: "Sorting",
       openagc: {
         verdict: "yes",
-        text: "Gmail's categories, plus routines: an agent sorts automated mail into daily, weekly and monthly labels, locally or in Claude's cloud",
+        text: "Gmail's categories, plus routines: an agent sorts automated mail into daily, weekly and monthly labels, locally or in Claude's cloud; Weekly reading brings each label back on the day it's due (preview)",
       },
       other: { verdict: "yes", text: "Categories (Primary, Transactions, Updates, Promotions), rules, Smart Mailboxes" },
     },
@@ -101,7 +101,7 @@ const c: Comparison = {
       feature: "Daily workflows",
       openagc: {
         verdict: "yes",
-        text: "Preview: Triage, Replies, Tasks and Waiting on others, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
       },
       other: { verdict: "no", text: "None described in Mail's guide; Categories sort the inbox and suggested actions add a reminder or event" },
     },
