@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "How Kaluta handles your Google account data and your email, and how this website uses analytics.",
 };
 
-const LAST_UPDATED = "October 11, 2026";
+const LAST_UPDATED = "October 29, 2026";
 
 export default function Privacy() {
   return (
@@ -44,16 +44,26 @@ export default function Privacy() {
 
       <h2>Data the app accesses</h2>
       <p>
-        When you sign in with Google, Kaluta requests the{" "}
-        <code>gmail.modify</code> scope, to read, organise and send your mail,
-        and the <code>userinfo.email</code> scope, to identify which account is
-        signed in. It never requests full mailbox access (
-        <code>mail.google.com</code>).
+        When you sign in with Google, Kaluta asks for full access to your Gmail
+        (<code>mail.google.com</code>), which downloading mail over IMAP needs,
+        and for the <code>gmail.modify</code> scope, so the app still works
+        over the Gmail API if you untick full access on Google&apos;s consent
+        screen. It also asks for <code>openid</code> and <code>profile</code>,
+        to show which account is signed in, with your name and picture.
       </p>
       <p>
         With that access the app downloads your messages, labels and
         attachments directly from Google to your Mac, and sends the actions you
         take — sending, archiving, labelling, deleting — directly back to Google.
+      </p>
+      <p>
+        Google Calendar is optional and never asked for at sign-in. If you
+        choose <em>Connect Google Calendar</em> in Settings › Accounts, Kaluta
+        asks for <code>calendar.freebusy</code>, to see when you are busy (never
+        what your events are), and <code>calendar.events.owned</code>, to add
+        and remove the tentative holds you ask for on calendars you own. Holds
+        invite no one. Agents are given free times only, never event titles,
+        attendees or descriptions. <em>Stop Using the Calendar</em> forgets it.
       </p>
 
       <h2>Where your data is stored</h2>

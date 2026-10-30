@@ -151,7 +151,10 @@ const c: Comparison = {
     },
     {
       feature: "Calendar",
-      openagc: { verdict: "no", text: "None" },
+      openagc: {
+        verdict: "partial",
+        text: "Connect Google Calendar to offer free times in replies and hold them as tentative events; no calendar view",
+      },
       other: { verdict: "yes", text: "Built in: see your calendar, turn emails into events, find free times" },
     },
     {
