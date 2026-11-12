@@ -13,7 +13,7 @@ const c: Comparison = {
   tagline:
     "Both are AI email clients. Superhuman Mail is a polished, hosted, subscription product for Gmail and Outlook on every platform; Kaluta is a free, open-source Mac client that keeps your mail local and hands the AI work to the agents you already pay for.",
   intro:
-    "Superhuman Mail is the best-known fast email client: split inbox, keyboard shortcuts, follow-up reminders, snippets, read statuses and team features, with Superhuman AI drafting replies, labelling mail and answering questions about your inbox. Since 2025 it also offers a hosted MCP server so Claude, ChatGPT or Cursor can read and send your mail. Kaluta approaches the same goal from the other side: no server of its own, no built-in model, and the agents you already use (Claude Code or Codex) working through a small set of mail tools, with your approval before anything is sent.",
+    "Superhuman Mail is the best-known fast email client: split inbox, keyboard shortcuts, follow-up reminders, snippets, read statuses and team features, with Superhuman AI drafting replies, labelling mail and answering questions about your inbox. Since 2025 it also offers a hosted MCP server so Claude, ChatGPT or Cursor can read and send your mail. Kaluta approaches the same goal from the other side: no mail server of its own, no built-in model, and the agents you already use (Claude Code or Codex) working through a small set of mail tools, with your approval before anything is sent.",
   checked: "8 October 2026",
   rows: [
     {
@@ -170,7 +170,7 @@ const c: Comparison = {
     "One subscription covers the AI; Kaluta needs a Claude Code or Codex login of your own.",
   ],
   ourStrengths: [
-    "Your mail stays on your Mac. There is no Kaluta server, no account and no telemetry; Superhuman's AI and MCP run on its servers.",
+    "Your mail stays on your Mac. No Kaluta server sees it, and there is no account and no telemetry; Superhuman's AI and MCP run on its servers.",
     "Free and open source: you can read exactly what the agent is allowed to do, and the permission engine is the only path to your mail.",
     "Agents you already use: Claude Code or Codex, with your existing login and plan, and a local MCP server rather than a hosted one.",
     "Features Superhuman does not have: tasks from email, a writing guide learned from your sent mail with evidence you can see, routines that run in Claude's cloud, Clean Up, and mailboxes of their own for your agents.",

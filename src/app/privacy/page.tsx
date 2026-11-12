@@ -5,10 +5,10 @@ import { GITHUB_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy policy",
   description:
-    "How Kaluta handles your Google account data and your email, and how this website uses analytics.",
+    "How Kaluta handles your Google account data and your email, what happens to a bug report or suggestion you send, and how this website uses analytics.",
 };
 
-const LAST_UPDATED = "October 29, 2026";
+const LAST_UPDATED = "November 12, 2026";
 
 export default function Privacy() {
   return (
@@ -26,7 +26,12 @@ export default function Privacy() {
       <ul>
         <li>
           Your email is stored only on your Mac. It never passes through servers
-          operated by Kaluta or Actual AI — the project operates none.
+          operated by Kaluta or Actual AI.
+        </li>
+        <li>
+          The one thing the project receives is feedback you choose to send: a
+          bug report or suggestion is an email to the project, and a maintainer
+          reviews it before any of it is public.
         </li>
         <li>
           The Kaluta app has no user accounts and collects no telemetry or
@@ -105,6 +110,67 @@ export default function Privacy() {
         Anthropic&apos;s terms.
       </p>
 
+      <h2 id="feedback">Bug reports and suggestions</h2>
+      <p>
+        You can report a bug by writing to{" "}
+        <a href="mailto:bug@support.kaluta.org">bug@support.kaluta.org</a> and
+        suggest a feature at{" "}
+        <a href="mailto:idea@support.kaluta.org">idea@support.kaluta.org</a>.
+        A report is an ordinary email from your own account. Nothing is sent
+        unless you send it.
+      </p>
+      <ul>
+        <li>
+          <strong>What the project receives.</strong> The email: its subject,
+          what you wrote, anything you attached, and your name and email
+          address as your mail program sent them.
+        </li>
+        <li>
+          <strong>Where it goes.</strong> The mail is received and stored by{" "}
+          <a href="https://www.primitive.dev">Primitive</a>, the mail service
+          the project uses for these two addresses. This website, hosted at
+          Vercel, is told that it arrived and emails a copy, with the first
+          picture attached, to a maintainer.
+        </li>
+        <li>
+          <strong>Review before anything is public.</strong> A maintainer
+          reads every report and looks at its picture before deciding. A
+          rejected report is not published, and you are not told.
+        </li>
+        <li>
+          <strong>What is published.</strong> An approved report becomes a
+          public issue on <a href={`${GITHUB_URL}/issues`}>GitHub</a>: its
+          title, your description, any app details and log lines in it, and
+          the first PNG or JPEG you attached, which is stored at a public
+          address at Vercel. Your name and email address are never published.
+          Write a report as if anyone could read it, and leave out anything
+          private.
+        </li>
+        <li>
+          <strong>What you get back.</strong> One email with the issue&apos;s
+          link when it is published, and one when the issue is closed. Your
+          address is used for nothing else.
+        </li>
+        <li>
+          <strong>How long it is kept.</strong> Your email stays at Primitive
+          while its issue is open, and is deleted there after the issue is
+          closed or the report is rejected. The maintainer&apos;s review copy
+          stays in their mailbox. A published issue and its picture stay
+          public.
+        </li>
+        <li>
+          <strong>Mail that is not a report.</strong> Mail that looks like
+          spam, or that fails the checks showing it came from the address it
+          names, is not forwarded or published. It stays at Primitive until
+          it is deleted there.
+        </li>
+        <li>
+          <strong>Removing it.</strong> To have a report, an issue or a
+          picture removed, write to the address you sent it to. A maintainer
+          reads everything sent there.
+        </li>
+      </ul>
+
       <h2>Google API Services User Data Policy</h2>
       <p>
         Kaluta&apos;s use and transfer of information received from Google APIs
@@ -168,8 +234,9 @@ export default function Privacy() {
       <p>
         Kaluta is an independent open-source project sponsored by Actual AI,
         which is the developer named on the signed app and on Google&apos;s
-        OAuth consent screen. Because the app has no backend, neither the
-        project nor Actual AI holds any of your email or account data.
+        OAuth consent screen. The app has no backend, so neither the project
+        nor Actual AI holds any of your email or account data, apart from
+        feedback you choose to send, described above.
       </p>
 
       <h2>Changes and contact</h2>

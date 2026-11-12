@@ -7,7 +7,7 @@ import { GITHUB_URL } from "@/lib/site";
 const principles = [
   {
     title: "No backend",
-    body: "Mail goes from Google to your Mac and nowhere else. The project runs no servers, has no accounts and collects no telemetry.",
+    body: "Mail goes from Google to your Mac and nowhere else. No Kaluta server sees your mail, and the app has no accounts and collects no telemetry.",
   },
   {
     title: "Agents get tools, not your mailbox",

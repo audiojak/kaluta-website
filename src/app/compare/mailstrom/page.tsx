@@ -35,7 +35,7 @@ const c: Comparison = {
       feature: "Where your mail is processed",
       openagc: {
         verdict: "yes",
-        text: "On your Mac only. No Kaluta server exists; the project has no accounts and no telemetry",
+        text: "On your Mac only. No Kaluta server sees your mail; the app has no accounts and no telemetry",
       },
       other: {
         verdict: "partial",

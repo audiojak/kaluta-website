@@ -24,8 +24,9 @@ export default function Terms() {
       <h2>What Kaluta is</h2>
       <p>
         Kaluta is open-source software that runs on your Mac. It is not a
-        hosted service: the project operates no servers, holds no accounts and
-        stores none of your data. Kaluta is an independent project sponsored by
+        hosted service: no server of ours sees your mail, and the project holds
+        no accounts. The only data we receive is feedback you choose to send,
+        as the <Link href="/privacy#feedback">privacy policy</Link> describes. Kaluta is an independent project sponsored by
         Actual AI (&ldquo;we&rdquo;, &ldquo;us&rdquo;).
       </p>
 
