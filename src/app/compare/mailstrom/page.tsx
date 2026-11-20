@@ -14,7 +14,7 @@ const c: Comparison = {
     "Both clear a crowded inbox by the thousand. Mailstrom is a paid web service that does it for any IMAP mailbox; Kaluta does it inside a free, open-source Mac mail client that also reads, writes and runs your AI agents.",
   intro:
     "Mailstrom is a bulk clean-up tool: it connects to your mailbox over IMAP, groups mail by sender, subject, date, size and list, and lets you delete, archive, move, unsubscribe or block in one go, with standing rules to keep the inbox clear. Kaluta's Clean Up window does the same grouping and bulk actions, but it is one part of a full email client. The rest of Kaluta (tasks, agents, a writing guide, routines) has no counterpart in Mailstrom, and Mailstrom's Block, Chill and Expire have no exact counterpart in Kaluta yet.",
-  checked: "8 October 2026",
+  checked: "19 November 2026",
   rows: [
     {
       feature: "What it is",
@@ -82,7 +82,10 @@ const c: Comparison = {
     },
     {
       feature: "Block a sender; snooze or expire mail",
-      openagc: { verdict: "no", text: "Not yet (snooze is not in the app either)" },
+      openagc: {
+        verdict: "partial",
+        text: "Remind me later brings an email back to the top of Triage at a time you choose; no block or expire",
+      },
       other: { verdict: "yes", text: "Block, Chill and Expire, plus rules for future mail (subscribers)" },
     },
     {
@@ -97,7 +100,7 @@ const c: Comparison = {
       feature: "Daily workflows",
       openagc: {
         verdict: "yes",
-        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), and Follow-ups on meetings with Granola, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
       },
       other: { verdict: "partial", text: "Bundles group related mail so you can act on many messages at once; no AI suggestions" },
     },

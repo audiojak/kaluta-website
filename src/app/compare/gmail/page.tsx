@@ -14,7 +14,7 @@ const c: Comparison = {
     "We love Gmail. Kaluta is built on it: a native Mac client for your Gmail account, to use alongside Gmail on the web and on your phone, not instead of them.",
   intro:
     "Everything Kaluta does happens in your Gmail account. Labels, archive, stars, read state, drafts and the Task label all sync both ways, so what you do on your Mac shows up in the Gmail app on your phone a moment later, and the other way round. Kaluta adds the parts Gmail does not have: your own AI agents working through approved tools, tasks from email, a writing guide learned from your sent mail, routines, Clean Up and mailboxes for your agents. Gmail keeps the parts it does best: being everywhere, search across everything, spam filtering, and Gemini for anyone who wants it.",
-  checked: "8 October 2026",
+  checked: "19 November 2026",
   rows: [
     {
       feature: "What it is",
@@ -104,7 +104,7 @@ const c: Comparison = {
       feature: "Daily workflows",
       openagc: {
         verdict: "yes",
-        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), and Follow-ups on meetings with Granola, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
       },
       other: { verdict: "partial", text: "AI Inbox (beta; US, English, with Google AI Plus, Pro or Ultra or Workspace Enterprise Plus) lists suggested to-dos with Reply or View; category tabs" },
     },
@@ -139,8 +139,38 @@ const c: Comparison = {
     },
     {
       feature: "Search",
-      openagc: { verdict: "partial", text: "Local full-text search of what is downloaded; Gmail's search for the rest" },
-      other: { verdict: "yes", text: "Across everything, with Gmail's operators" },
+      openagc: {
+        verdict: "partial",
+        text: "Local full-text search of what is downloaded, plus related conversations by meaning, worked out on your Mac; Gmail's search for the rest",
+      },
+      other: {
+        verdict: "yes",
+        text: "Across everything, with Gmail's operators; on eligible plans, questions in the search bar get an AI Overview",
+      },
+    },
+    {
+      feature: "Send later, snooze, templates",
+      openagc: {
+        verdict: "yes",
+        text: "Send Later (sent while Kaluta is running), Remind me later (the email stays in the Inbox; Triage brings it back), snippets",
+      },
+      other: { verdict: "yes", text: "Schedule send, Snooze and templates" },
+    },
+    {
+      feature: "Calendar invitations",
+      openagc: {
+        verdict: "yes",
+        text: "Accept, Maybe or Decline on the email, sent to Google Calendar as Gmail's buttons send it",
+      },
+      other: { verdict: "yes", text: "Yes, No or Maybe at the top of the invitation" },
+    },
+    {
+      feature: "Forwarding rules",
+      openagc: {
+        verdict: "partial",
+        text: "Proposes a rule from mail you keep forwarding; automatic or ask each time; runs only while Kaluta is open",
+      },
+      other: { verdict: "yes", text: "Filters forward to an address you have verified, on Google's servers, whether or not any app is open" },
     },
     {
       feature: "Spam and phishing protection",
@@ -178,6 +208,12 @@ const c: Comparison = {
     { label: "How to use Gemini in Gmail (Google blog)", url: "https://blog.google/products/gmail/how-to-use-gemini-gmail-app/" },
     { label: "Gmail Help: AI Inbox", url: "https://support.google.com/mail/answer/16845247" },
     { label: "Gmail Help: Reply to messages (nudges)", url: "https://support.google.com/mail/answer/6585" },
+    { label: "Gmail Help: Schedule emails to send later", url: "https://support.google.com/mail/answer/9214606" },
+    { label: "Gmail Help: Snooze emails", url: "https://support.google.com/mail/answer/7622010" },
+    { label: "Gmail Help: Templates", url: "https://support.google.com/mail/answer/14864208" },
+    { label: "Google Calendar Help: Respond to invitations", url: "https://support.google.com/calendar/answer/37135" },
+    { label: "Gmail Help: Automatically forward messages", url: "https://support.google.com/mail/answer/10957" },
+    { label: "Gmail Help: AI Overviews in search", url: "https://support.google.com/mail/answer/16789526" },
     { label: "Kaluta specification (Gmail integration, §7)", url: "https://github.com/audiojak/kaluta/blob/main/docs/SPECIFICATION.md" },
   ],
 };

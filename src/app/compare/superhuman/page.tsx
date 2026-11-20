@@ -14,7 +14,7 @@ const c: Comparison = {
     "Both are AI email clients. Superhuman Mail is a polished, hosted, subscription product for Gmail and Outlook on every platform; Kaluta is a free, open-source Mac client that keeps your mail local and hands the AI work to the agents you already pay for.",
   intro:
     "Superhuman Mail is the best-known fast email client: split inbox, keyboard shortcuts, follow-up reminders, snippets, read statuses and team features, with Superhuman AI drafting replies, labelling mail and answering questions about your inbox. Since 2025 it also offers a hosted MCP server so Claude, ChatGPT or Cursor can read and send your mail. Kaluta approaches the same goal from the other side: no mail server of its own, no built-in model, and the agents you already use (Claude Code or Codex) working through a small set of mail tools, with your approval before anything is sent.",
-  checked: "8 October 2026",
+  checked: "19 November 2026",
   rows: [
     {
       feature: "What it is",
@@ -114,7 +114,7 @@ const c: Comparison = {
       feature: "Daily workflows",
       openagc: {
         verdict: "yes",
-        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), and Follow-ups on meetings with Granola, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
       },
       other: { verdict: "partial", text: "Split Inbox, auto labels and Get Me To Zero for working through the inbox; its help centre describes no one-at-a-time mode" },
     },
@@ -125,6 +125,28 @@ const c: Comparison = {
         text: "Preview: Waiting on others finds sent mail that expects an answer, labels it Waiting, and after 3 days offers up to three follow-ups written ahead",
       },
       other: { verdict: "yes", text: "Remind Me and Auto Reminders bring back mail with no reply; Auto Drafts writes the follow-up (Business)" },
+    },
+    {
+      feature: "Send later, reminders, snippets, command palette",
+      openagc: {
+        verdict: "yes",
+        text: "Send Later (sent while Kaluta is running), Remind me later, snippets and a ⌘K palette; times can be typed in words",
+      },
+      other: {
+        verdict: "yes",
+        text: "Send Later, Remind Me with typed times, Snippets shared with your team, and Cmd+K for every command",
+      },
+    },
+    {
+      feature: "Meetings",
+      openagc: {
+        verdict: "yes",
+        text: "With Granola: a brief from your mail before each meeting, and follow-ups judged and drafted after it, for you to send",
+      },
+      other: {
+        verdict: "partial",
+        text: "Meeting prep and follow-through are offered in Superhuman Go, a separate plan; Mail's Ask AI can summarize who you're meeting",
+      },
     },
     {
       feature: "Learns how you write",
@@ -153,7 +175,7 @@ const c: Comparison = {
       feature: "Calendar",
       openagc: {
         verdict: "partial",
-        text: "Connect Google Calendar to offer free times in replies and hold them as tentative events; no calendar view",
+        text: "Connect Google Calendar: free times beside the thread and in replies, tentative holds, and Accept, Maybe or Decline on invitations; no calendar view",
       },
       other: { verdict: "yes", text: "Built in: see your calendar, turn emails into events, find free times" },
     },
@@ -173,7 +195,7 @@ const c: Comparison = {
     "Your mail stays on your Mac. No Kaluta server sees it, and there is no account and no telemetry; Superhuman's AI and MCP run on its servers.",
     "Free and open source: you can read exactly what the agent is allowed to do, and the permission engine is the only path to your mail.",
     "Agents you already use: Claude Code or Codex, with your existing login and plan, and a local MCP server rather than a hosted one.",
-    "Features Superhuman does not have: tasks from email, a writing guide learned from your sent mail with evidence you can see, routines that run in Claude's cloud, Clean Up, and mailboxes of their own for your agents.",
+    "Features Superhuman does not have: tasks from email, a writing guide learned from your sent mail with evidence you can see, routines that run in Claude's cloud, Clean Up, mailboxes of their own for your agents, and search by meaning worked out on your Mac.",
   ],
   choose: {
     them: "if you want a finished product today, work in a team, use Outlook, or need Windows, iOS or Android.",
@@ -188,6 +210,12 @@ const c: Comparison = {
     { label: "Download Superhuman Mail (platforms)", url: "https://help.superhuman.com/hc/en-us/articles/38456031956243" },
     { label: "Superhuman: Auto Reminders & Auto Drafts", url: "https://help.superhuman.com/hc/en-us/articles/46005658551053-Auto-Reminders-Auto-Drafts" },
     { label: "Superhuman: Remind Me", url: "https://help.superhuman.com/hc/en-us/articles/46005666142733-Remind-Me" },
+    { label: "Superhuman: Snippets", url: "https://help.superhuman.com/hc/en-us/articles/46005686571149-Snippets" },
+    { label: "Superhuman: Keyboard shortcuts (Superhuman Command)", url: "https://help.superhuman.com/hc/en-us/articles/46005701270541-Keyboard-Shortcuts-in-Superhuman-Mail" },
+    { label: "Superhuman: Switching from Notion Mail (Send Later, Remind Me)", url: "https://help.superhuman.com/hc/en-us/articles/47206763851533-Switching-from-Notion-Mail-to-Superhuman-Mail" },
+    { label: "Superhuman: Share Availability", url: "https://help.superhuman.com/hc/en-us/articles/46005575115021-Share-Availability" },
+    { label: "Superhuman: Ask AI", url: "https://help.superhuman.com/hc/en-us/articles/46005676610829-Ask-AI" },
+    { label: "Superhuman Go", url: "https://superhuman.com/plans/go" },
     { label: "Kaluta specification", url: "https://github.com/audiojak/kaluta/blob/main/docs/SPECIFICATION.md" },
   ],
 };

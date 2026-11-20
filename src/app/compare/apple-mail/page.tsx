@@ -14,7 +14,7 @@ const c: Comparison = {
     "Both are native Mac mail clients that keep your mail on your machine. Apple Mail is built in, works with any account and has Apple Intelligence; Kaluta is Gmail-only, open source, and built to put your own AI agents to work.",
   intro:
     "Apple Mail is the client most Mac users already have: free, fast, any account type, and since macOS 26 with categories, priority messages, summaries and Smart Reply from Apple Intelligence, processed on the Mac or in Apple's Private Cloud Compute. Kaluta is narrower and goes further in one direction. It speaks only Gmail, but it lets Claude Code or Codex work on your mail through approved tools, turns email into tasks, learns how you write from your sent mail, runs routines that sort mail every hour, and can give an agent an address of its own.",
-  checked: "8 October 2026",
+  checked: "19 November 2026",
   rows: [
     {
       feature: "What it is",
@@ -101,7 +101,7 @@ const c: Comparison = {
       feature: "Daily workflows",
       openagc: {
         verdict: "yes",
-        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
+        text: "Preview: seven workflows (Triage, Replies, Tasks, Waiting on others, Weekly reading, Agents, Teach Kaluta), and Follow-ups on meetings with Granola, one item at a time; Triage shows Kaluta's suggested action and its reason for each new conversation",
       },
       other: { verdict: "no", text: "None described in Mail's guide; Categories sort the inbox and suggested actions add a reminder or event" },
     },
@@ -135,9 +135,28 @@ const c: Comparison = {
       other: { verdict: "no", text: "None" },
     },
     {
-      feature: "Undo send, send later",
-      openagc: { verdict: "partial", text: "Undo Send; no scheduled send yet" },
-      other: { verdict: "yes", text: "Undo Send and Send Later" },
+      feature: "Undo send, send later, remind me",
+      openagc: {
+        verdict: "yes",
+        text: "Undo Send, Send Later (sent while Kaluta is running) and Remind me later, with times typed in words",
+      },
+      other: { verdict: "yes", text: "Undo Send, Send Later and Remind Me" },
+    },
+    {
+      feature: "Calendar invitations",
+      openagc: {
+        verdict: "yes",
+        text: "Accept, Maybe or Decline on the email, answered in Google Calendar (with the calendar connected)",
+      },
+      other: { verdict: "partial", text: "Open the invitation to add it to Calendar, and answer it there" },
+    },
+    {
+      feature: "Rules that forward mail",
+      openagc: {
+        verdict: "yes",
+        text: "Proposes a rule from mail you keep forwarding; it forwards automatically or asks each time, while Kaluta is open",
+      },
+      other: { verdict: "yes", text: "Rules can forward messages, while Mail is open" },
     },
     {
       feature: "Maturity",
@@ -166,6 +185,10 @@ const c: Comparison = {
     { label: "Apple Intelligence (Apple)", url: "https://www.apple.com/apple-intelligence/" },
     { label: "Use Apple Intelligence in Mail on Mac (Mac User Guide)", url: "https://support.apple.com/guide/mac-help/mchlb2dbea8f/mac" },
     { label: "Mail User Guide: Mark emails to revisit later", url: "https://support.apple.com/guide/mail/mark-emails-to-revisit-later-mlhlp1052/mac" },
+    { label: "Mail User Guide: Send email messages (Send Later)", url: "https://support.apple.com/guide/mail/send-email-messages-mlhlp1098/mac" },
+    { label: "Mail User Guide: Manage notifications (Remind Me)", url: "https://support.apple.com/guide/mail/manage-notifications-mlhlc8ab2bf1/mac" },
+    { label: "Calendar User Guide: Send and receive invitations", url: "https://support.apple.com/guide/calendar/send-and-receive-invitations-to-events-icl1016/mac" },
+    { label: "Mail User Guide: Read and respond to emails (rules that forward)", url: "https://support.apple.com/guide/mail/read-and-respond-to-emails-mlhlp1010/mac" },
     { label: "Kaluta specification", url: "https://github.com/audiojak/kaluta/blob/main/docs/SPECIFICATION.md" },
   ],
 };

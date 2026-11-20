@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "How Kaluta handles your Google account data and your email, what happens to a bug report or suggestion you send, and how this website uses analytics.",
 };
 
-const LAST_UPDATED = "November 12, 2026";
+const LAST_UPDATED = "November 19, 2026";
 
 export default function Privacy() {
   return (
@@ -66,9 +66,20 @@ export default function Privacy() {
         choose <em>Connect Google Calendar</em> in Settings › Accounts, Kaluta
         asks for <code>calendar.freebusy</code>, to see when you are busy (never
         what your events are), and <code>calendar.events.owned</code>, to add
-        and remove the tentative holds you ask for on calendars you own. Holds
-        invite no one. Agents are given free times only, never event titles,
+        and remove the tentative holds you ask for on calendars you own and to
+        record your answer when you accept, decline or say maybe to an
+        invitation (Google then tells the organiser). Holds invite no one. Agents are given free times only, never event titles,
         attendees or descriptions. <em>Stop Using the Calendar</em> forgets it.
+      </p>
+      <p>
+        Granola is optional too. If you choose <em>Connect Granola</em> in
+        Settings › Integrations, you sign in on Granola&apos;s own page and
+        Kaluta reads your meetings read-only: the list of meetings, their notes
+        and attendees, and their transcripts. Its sign-in is kept in the macOS
+        Keychain. To brief you before a meeting and draft follow-ups after
+        one, Kaluta gives a meeting&apos;s notes and transcript to your own AI
+        agent (below), marked as data, not instructions. <em>Disconnect</em>{" "}
+        deletes the sign-in and every meeting and draft made from it.
       </p>
 
       <h2>Where your data is stored</h2>
@@ -79,6 +90,11 @@ export default function Privacy() {
         </li>
         <li>
           Google sign-in tokens are stored in the macOS Keychain.
+        </li>
+        <li>
+          Search by meaning works from vectors that Apple&apos;s on-device
+          language model computes from your messages. They are stored with
+          your mail on your Mac and never sent anywhere.
         </li>
         <li>
           Signing out of an account in Kaluta deletes its sign-in tokens and its local mail database. You
@@ -102,7 +118,15 @@ export default function Privacy() {
         your AI provider under your agreement with them — Kaluta does not
         control how that provider handles it. Every access is recorded in a
         local log you can review. Sending, forwarding and deleting always require
-        your approval in the app.
+        your approval in the app. Background jobs that nobody continues, such
+        as suggestions and summaries, ask Codex not to keep them in your
+        conversation history.
+      </p>
+      <p>
+        A forwarding rule you accept and set to <em>Forward automatically</em>{" "}
+        forwards new matching mail to the address you chose without asking
+        each time. Rules are matched by the app&apos;s own code; no agent can
+        read or change them.
       </p>
       <p>
         If you choose to set up a Claude cloud routine, it is created in your own
